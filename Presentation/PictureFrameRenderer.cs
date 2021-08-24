@@ -2,7 +2,7 @@
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
-namespace Presentation.Main
+namespace PResourcesentation.Main
 {
     public class PictureFrameRenderer
     {
@@ -29,14 +29,14 @@ namespace Presentation.Main
 
         private static void RenderFrame(Image image, int imageWidth, int imageHeight, Bitmap frame)
         {
-            Image frame4 = Image.FromFile(@"res\frames\up-left.png");
-            Image frame1 = Image.FromFile(@"res\frames\up-right.png");
-            Image frame2 = Image.FromFile(@"res\frames\down-right.png");
-            Image frame3 = Image.FromFile(@"res\frames\down-left.png");
-            Image up = Image.FromFile(@"res\frames\up1.png");
-            Image down = Image.FromFile(@"res\frames\down1.png");
-            Image left = Image.FromFile(@"res\frames\left1.png");
-            Image right = Image.FromFile(@"res\frames\right1.png");
+            Image frame4 = Image.FromFile(@"Resources\Frames\Dark\up-left.png");
+            Image frame1 = Image.FromFile(@"Resources\Frames\Dark\up-right.png");
+            Image frame2 = Image.FromFile(@"Resources\Frames\Dark\down-right.png");
+            Image frame3 = Image.FromFile(@"Resources\Frames\Dark\down-left.png");
+            Image up = Image.FromFile(@"Resources\Frames\Dark\up1.png");
+            Image down = Image.FromFile(@"Resources\Frames\Dark\down1.png");
+            Image left = Image.FromFile(@"Resources\Frames\Dark\left1.png");
+            Image right = Image.FromFile(@"Resources\Frames\Dark\right1.png");
 
             Graphics graphics = Graphics.FromImage(frame);
 
