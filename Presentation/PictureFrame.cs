@@ -1,5 +1,4 @@
-﻿using Presentation.Handlers;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Presentation
