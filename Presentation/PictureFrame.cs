@@ -49,10 +49,10 @@ namespace Presentation
         {
             controlPanel.Location = new Point(20, 20);
             //controlPanel.BackColor = Color.Transparent;
-            controlPanel.Visible = true;
+            controlPanel.Visible = false;
             _IsPlaying = true;
         }
-
+            
         private void DrawImage(Bitmap bitmap)
         {
             Image image = _pictureFrameRenderer.RenderImage(bitmap);
@@ -116,6 +116,16 @@ namespace Presentation
                 playPauseButton.Image = Resources.play_black;
 
             _IsPlaying = !_IsPlaying;
+        }
+
+        private void PictureFrame_Activated(object sender, EventArgs e)
+        {
+            controlPanel.Visible = true;
+        }
+
+        private void PictureFrame_Deactivate(object sender, EventArgs e)
+        {
+            controlPanel.Visible = false;
         }
     }
 }

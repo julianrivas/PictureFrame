@@ -107,6 +107,8 @@ namespace Presentation
             this.Controls.Add(this.pictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PictureFrame";
+            this.Activated += new System.EventHandler(this.PictureFrame_Activated);
+            this.Deactivate += new System.EventHandler(this.PictureFrame_Deactivate);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.controlPanel.ResumeLayout(false);
             this.controlPanel.PerformLayout();
