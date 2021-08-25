@@ -1,7 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentation
@@ -17,7 +15,15 @@ namespace Presentation
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PictureFrame());
+
+            ServiceCollection services = new ServiceCollection();
+
+            services.AddServices();
+
+            using ServiceProvider serviceProvider = services.BuildServiceProvider();
+
+            PictureFrame pictureFrame = serviceProvider.GetRequiredService<PictureFrame>();
+            Application.Run(pictureFrame);
         }
     }
 }
