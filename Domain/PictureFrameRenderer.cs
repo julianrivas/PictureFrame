@@ -31,34 +31,35 @@ namespace Domain
         {
             DarkFrame darkFrame = new DarkFrame();
 
-            Image frame4 = darkFrame.CornerFrame.UpLeftImage;
-            Image frame1 = darkFrame.CornerFrame.UpRightImage;
-            Image frame2 = darkFrame.CornerFrame.DownRightImage;
-            Image frame3 = darkFrame.CornerFrame.DownLeftImage;
-            Image up = darkFrame.BorderFrame.UpImage;
-            Image down = darkFrame.BorderFrame.DownImage;
-            Image left = darkFrame.BorderFrame.LeftImage;
-            Image right = darkFrame.BorderFrame.RightImage;
+            Image ULCorner = darkFrame.CornerFrame.UpLeftImage;
+            Image URCorner = darkFrame.CornerFrame.UpRightImage;
+            Image DLCorner = darkFrame.CornerFrame.DownLeftImage;
+            Image DRCorner = darkFrame.CornerFrame.DownRightImage;
+
+            Image USide = darkFrame.BorderFrame.UpImage;
+            Image DSide = darkFrame.BorderFrame.DownImage;
+            Image LSide = darkFrame.BorderFrame.LeftImage;
+            Image RSide = darkFrame.BorderFrame.RightImage;
 
             Graphics graphics = Graphics.FromImage(frame);
 
             graphics.DrawImage(image, 14, 14, imageWidth, imageHeight);
 
-            graphics.DrawImage(frame4, 0, 0, 14, 14);
-            graphics.DrawImage(frame1, imageWidth + 14, 0, 14, 14);
-            graphics.DrawImage(frame2, imageWidth + 14, imageHeight + 14, 14, 14);
-            graphics.DrawImage(frame3, 0, imageHeight + 14, 14, 14);
+            graphics.DrawImage(ULCorner, 0, 0, 14, 14);
+            graphics.DrawImage(URCorner, imageWidth + 14, 0, 14, 14);
+            graphics.DrawImage(DLCorner, 0, imageHeight + 14, 14, 14);
+            graphics.DrawImage(DRCorner, imageWidth + 14, imageHeight + 14, 14, 14);
 
             for (int i = 0; i < imageWidth; i++)
             {
-                graphics.DrawImage(up, 14 + i, 0);
-                graphics.DrawImage(down, 14 + i, imageHeight + 14);
+                graphics.DrawImage(USide, 14 + i, 0);
+                graphics.DrawImage(DSide, 14 + i, imageHeight + 14);
             }
 
             for (int i = 0; i < imageHeight; i++)
             {
-                graphics.DrawImage(left, 0, 14 + i);
-                graphics.DrawImage(right, imageWidth + 14, 14 + i);
+                graphics.DrawImage(LSide, 0, 14 + i);
+                graphics.DrawImage(RSide, imageWidth + 14, 14 + i);
             }
         }
     }
