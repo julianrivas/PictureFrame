@@ -1,4 +1,5 @@
 ﻿using Domain.Frames;
+using Domain.Services.Interfaces;
 using System.Drawing;
 using System.Drawing.Imaging;
 

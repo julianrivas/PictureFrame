@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Presentation.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -18,7 +19,8 @@ namespace Presentation
 
             ServiceCollection services = new ServiceCollection();
 
-            services.AddServices();
+            services.AddResolverServices();
+            services.AddDomainServices();
 
             using ServiceProvider serviceProvider = services.BuildServiceProvider();
 

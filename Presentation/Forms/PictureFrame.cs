@@ -1,11 +1,12 @@
 ﻿using Domain;
+using Domain.Services.Interfaces;
 using Presentation.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Presentation
+namespace Presentation.Forms
 {
     public partial class PictureFrame : Form
     {

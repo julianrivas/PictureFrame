@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Domain
+namespace Domain.Services.Interfaces
 {
     public interface IPictureFrameRenderer
     {
