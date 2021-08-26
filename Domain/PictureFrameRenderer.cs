@@ -1,6 +1,6 @@
-﻿using System.Drawing;
+﻿using Domain.Frames;
+using System.Drawing;
 using System.Drawing.Imaging;
-using System.Windows.Forms;
 
 namespace Domain
 {
@@ -29,14 +29,16 @@ namespace Domain
 
         private static void RenderFrame(Image image, int imageWidth, int imageHeight, Bitmap frame)
         {
-            Image frame4 = Image.FromFile(@"Resources\Frames\Dark\up-left.png");
-            Image frame1 = Image.FromFile(@"Resources\Frames\Dark\up-right.png");
-            Image frame2 = Image.FromFile(@"Resources\Frames\Dark\down-right.png");
-            Image frame3 = Image.FromFile(@"Resources\Frames\Dark\down-left.png");
-            Image up = Image.FromFile(@"Resources\Frames\Dark\up1.png");
-            Image down = Image.FromFile(@"Resources\Frames\Dark\down1.png");
-            Image left = Image.FromFile(@"Resources\Frames\Dark\left1.png");
-            Image right = Image.FromFile(@"Resources\Frames\Dark\right1.png");
+            DarkFrame darkFrame = new DarkFrame();
+
+            Image frame4 = darkFrame.CornerFrame.UpLeftImage;
+            Image frame1 = darkFrame.CornerFrame.UpRightImage;
+            Image frame2 = darkFrame.CornerFrame.DownRightImage;
+            Image frame3 = darkFrame.CornerFrame.DownLeftImage;
+            Image up = darkFrame.BorderFrame.UpImage;
+            Image down = darkFrame.BorderFrame.DownImage;
+            Image left = darkFrame.BorderFrame.LeftImage;
+            Image right = darkFrame.BorderFrame.RightImage;
 
             Graphics graphics = Graphics.FromImage(frame);
 
@@ -58,17 +60,6 @@ namespace Domain
                 graphics.DrawImage(left, 0, 14 + i);
                 graphics.DrawImage(right, imageWidth + 14, 14 + i);
             }
-        }
-
-        private PictureBox RenderImage(Point point, Size size, Image image)
-        {
-            PictureBox pictureBox = new PictureBox();
-            pictureBox.Location = point;
-            pictureBox.Size = size;
-            pictureBox.SizeMode = PictureBoxSizeMode.Normal;
-            pictureBox.Image = image;
-            pictureBox.BorderStyle = BorderStyle.None;
-            return pictureBox;
         }
     }
 }
