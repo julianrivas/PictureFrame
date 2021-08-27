@@ -1,9 +1,8 @@
-﻿using Domain;
-using Domain.Services.Interfaces;
+﻿using Domain.Services.Interfaces;
 using Presentation.Properties;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Presentation.Forms
@@ -15,6 +14,7 @@ namespace Presentation.Forms
         private int _indice;
         private bool _IsPlaying;
         private Point _lastPoint;
+        private string[] _images;
 
         public PictureFrame(IPictureFrameRenderer pictureFrameRenderer)
         {
@@ -24,25 +24,17 @@ namespace Presentation.Forms
             DrawImage(GenerateRandomImage());
         }
 
-        private readonly List<Bitmap> images = new()
-        {
-            Resources.IMG_143949244608458,
-            Resources.IMG_132060135311861,
-            Resources.IMG_241369506629628,
-            Resources.IMG_249997204594106,
-            Resources.IMG_249595061164167,
-            Resources.IMG_44353119378146,
-            Resources.IMG_87564803925760,
-            Resources.IMG_44243566241063
-        };
 
         private Bitmap GenerateRandomImage()
         {
+            _images = Directory.GetFiles(@"C:\Images", "*.*", SearchOption.AllDirectories);
+
             Random random = new Random();
 
-            _indice = random.Next(0, 7);
+            _indice = random.Next(0, _images.Length);
 
-            Bitmap image = images[_indice];
+
+            Bitmap image = (Bitmap)Image.FromFile(_images[_indice]);
             return image;
         }
 
@@ -67,10 +59,10 @@ namespace Presentation.Forms
         {
             _indice++;
 
-            if (_indice >= images.Count)
+            if (_indice >= _images.Length)
                 _indice = 0;
 
-            return images[_indice];
+            return (Bitmap)Image.FromFile(_images[_indice]);
         }
 
         private Bitmap GetPreviousImage()
@@ -78,9 +70,9 @@ namespace Presentation.Forms
             _indice--;
 
             if (_indice < 0)
-                _indice = images.Count - 1;
+                _indice = _images.Length - 1;
 
-            return images[_indice];
+            return (Bitmap)Image.FromFile(_images[_indice]);
         }
 
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
