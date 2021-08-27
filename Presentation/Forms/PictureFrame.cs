@@ -21,27 +21,26 @@ namespace Presentation.Forms
             _pictureFrameRenderer = pictureFrameRenderer;
             InitializeComponent();
             EnableControlPanel();
+            GetDirectoryFilesPath();
             DrawImage(GenerateRandomImage());
         }
 
 
         private Bitmap GenerateRandomImage()
         {
+            _indice = new Random().Next(0, _images.Length);
+
+            return (Bitmap)Image.FromFile(_images[_indice]);
+        }
+
+        private void GetDirectoryFilesPath()
+        {
             _images = Directory.GetFiles(@"C:\Images", "*.*", SearchOption.AllDirectories);
-
-            Random random = new Random();
-
-            _indice = random.Next(0, _images.Length);
-
-
-            Bitmap image = (Bitmap)Image.FromFile(_images[_indice]);
-            return image;
         }
 
         private void EnableControlPanel()
         {
             controlPanel.Location = new Point(20, 20);
-            //controlPanel.BackColor = Color.Transparent;
             controlPanel.Visible = false;
             _IsPlaying = true;
         }
