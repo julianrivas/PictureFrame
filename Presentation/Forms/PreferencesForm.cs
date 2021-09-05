@@ -4,7 +4,7 @@ using Presentation.Settings;
 using System;
 using System.Windows.Forms;
 
-namespace Presentation
+namespace Presentation.Forms
 {
     public partial class PreferencesForm : Form
     {

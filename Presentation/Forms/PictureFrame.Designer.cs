@@ -142,6 +142,7 @@ namespace Presentation.Forms
             this.ToolStripMenuItem_Preferences.Name = "ToolStripMenuItem_Preferences";
             this.ToolStripMenuItem_Preferences.Size = new System.Drawing.Size(185, 22);
             this.ToolStripMenuItem_Preferences.Text = "Widget Preferences...";
+            this.ToolStripMenuItem_Preferences.Click += new System.EventHandler(this.ToolStripMenuItem_Preferences_Click);
             // 
             // toolStripSeparator2
             // 
@@ -176,6 +177,7 @@ namespace Presentation.Forms
             this.ToolStripMenuItem_Close.Name = "ToolStripMenuItem_Close";
             this.ToolStripMenuItem_Close.Size = new System.Drawing.Size(185, 22);
             this.ToolStripMenuItem_Close.Text = "Close Widget";
+            this.ToolStripMenuItem_Close.Click += new System.EventHandler(this.ToolStripMenuItem_Close_Click);
             // 
             // PictureFrame
             // 

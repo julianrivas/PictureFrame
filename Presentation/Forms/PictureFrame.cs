@@ -122,7 +122,7 @@ namespace Presentation.Forms
         private void PictureFrame_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
-                ContextMenuStrip.Show(this, new Point(e.X, e.Y));
+                contextMenuStrip1.Show(this, new Point(e.X, e.Y));
         }
 
         private void ToolStripMenuItem_Preferences_Click(object sender, EventArgs e)
