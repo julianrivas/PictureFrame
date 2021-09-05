@@ -29,13 +29,25 @@ namespace Presentation.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.controlPanel = new System.Windows.Forms.Panel();
             this.previousButton = new System.Windows.Forms.Label();
             this.nextButton = new System.Windows.Forms.Label();
             this.playPauseButton = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripMenuItem_Preferences = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Close = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.controlPanel.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox
@@ -46,6 +58,7 @@ namespace Presentation.Forms
             this.pictureBox.Size = new System.Drawing.Size(800, 450);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
+            this.pictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PictureFrame_MouseClick);
             this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
             this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
             // 
@@ -98,6 +111,72 @@ namespace Presentation.Forms
             this.playPauseButton.Text = " ";
             this.playPauseButton.Click += new System.EventHandler(this.playPauseButton_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripSeparator1,
+            this.ToolStripMenuItem_Preferences,
+            this.toolStripSeparator2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripSeparator3,
+            this.toolStripMenuItem5,
+            this.ToolStripMenuItem_Close});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 154);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(185, 22);
+            this.toolStripMenuItem1.Text = "About Picture Frame";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(182, 6);
+            // 
+            // ToolStripMenuItem_Preferences
+            // 
+            this.ToolStripMenuItem_Preferences.Name = "ToolStripMenuItem_Preferences";
+            this.ToolStripMenuItem_Preferences.Size = new System.Drawing.Size(185, 22);
+            this.ToolStripMenuItem_Preferences.Text = "Widget Preferences...";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(182, 6);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(185, 22);
+            this.toolStripMenuItem3.Text = "Refresh Pictures";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(185, 22);
+            this.toolStripMenuItem4.Text = "Find Current Image";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(182, 6);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(185, 22);
+            this.toolStripMenuItem5.Text = "Hide Widget";
+            // 
+            // ToolStripMenuItem_Close
+            // 
+            this.ToolStripMenuItem_Close.Name = "ToolStripMenuItem_Close";
+            this.ToolStripMenuItem_Close.Size = new System.Drawing.Size(185, 22);
+            this.ToolStripMenuItem_Close.Text = "Close Widget";
+            // 
             // PictureFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -112,6 +191,7 @@ namespace Presentation.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.controlPanel.ResumeLayout(false);
             this.controlPanel.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -123,6 +203,16 @@ namespace Presentation.Forms
         private System.Windows.Forms.Label previousButton;
         private System.Windows.Forms.Label nextButton;
         private System.Windows.Forms.Label playPauseButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Preferences;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Close;
     }
 }
 

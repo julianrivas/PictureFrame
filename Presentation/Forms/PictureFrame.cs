@@ -119,5 +119,21 @@ namespace Presentation.Forms
         {
             controlPanel.Visible = false;
         }
+        private void PictureFrame_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+                ContextMenuStrip.Show(this, new Point(e.X, e.Y));
+        }
+
+        private void ToolStripMenuItem_Preferences_Click(object sender, EventArgs e)
+        {
+            PreferencesForm preferences = new();
+            preferences.Show();
+        }
+
+        private void ToolStripMenuItem_Close_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
