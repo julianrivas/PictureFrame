@@ -30,7 +30,7 @@ namespace Presentation.Settings
         }
 
         [UserScopedSetting()]
-        [DefaultSettingValue("")]
+        [DefaultSettingValue("C:\\Users\\Public\\Pictures")]
         public string Image_PictureFolder
         { 
             get => (string) this["Image_PictureFolder"];
